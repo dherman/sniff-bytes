@@ -8,34 +8,10 @@ on:
   push:
     tags:
       - v*
-      - DRYRUN*
 
 jobs:
-  setup:
-    name: Setup
-    runs-on: ubuntu-latest
-    outputs:
-      action: ${{ steps.action.outputs.type }}
-    steps:
-      - name: Get Tag Name
-        uses: olegtarasov/get-tag@v2.1.2
-        id: tagName
-      - id: action
-        name: Determine Action Type
-        shell: bash
-        run: |
-          if [[ ${{ contains(steps.tagName.outputs.tag, 'DRYRUN') }} == true ]]
-          then
-            echo type=dryrun
-            echo "type=dryrun" >> "$GITHUB_OUTPUT"
-          else
-            echo type=publish
-            echo "type=publish" >> "$GITHUB_OUTPUT"
-          fi
-
   macos-builds:
     name: Builds (macOS)
-    needs: [setup]
     strategy:
       matrix:
         target: [aarch64-apple-darwin]
@@ -51,12 +27,11 @@ jobs:
           target: ${{ matrix.target }}
           node-version: ${{ env.NODE_VERSION }}
           npm-publish: false
-          github-release: ${{ needs.setup.outputs.action == 'publish' }}
+          github-release: true
 
   publish:
     name: Publish
-    needs: [setup, macos-builds]
-    if: needs.setup.outputs.action == 'publish'
+    needs: [macos-builds]
     runs-on: ubuntu-latest
     permissions:
       contents: write

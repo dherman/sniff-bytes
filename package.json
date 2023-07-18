@@ -1,0 +1,62 @@
+{
+  "name": "sniff-bytes",
+  "private": false,
+  "version": "0.0.1",
+  "description": "An npm library to sniff the file format of a binary buffer.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/index.d.mts",
+        "default": "./lib/index.mjs"
+      },
+      "require": {
+        "types": "./types/index.d.cts",
+        "default": "./lib/index.cjs"
+      }
+    }
+  },
+  "types": "./types/index.d.cts",
+  "main": "./lib/index.cjs",
+  "files": [
+    "lib/index.cjs",
+    "lib/load.cjs",
+    "lib/index.mjs",
+    "types/index.d.cts",
+    "types/index.d.mts"
+  ],
+  "scripts": {
+    "test": "cargo test",
+    "debug": "cargo build --message-format=json | neon dist",
+    "build": "cargo build --message-format=json --release | neon dist -v",
+    "cross": "cross build --message-format=json --release | neon dist -v -m /target",
+    "pack-build": "neon pack-build -v",
+    "prepack": "neon install-builds -v 2>install-builds.log",
+    "version": "neon bump -v --binaries npm"
+  },
+  "keywords": [
+    "Rust",
+    "Neon",
+    "binary",
+    "sniff",
+    "formats"
+  ],
+  "author": "David Herman <david.herman@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherman/sniff-bytes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dherman/sniff-bytes/issues"
+  },
+  "homepage": "https://github.com/dherman/sniff-bytes#readme",
+  "license": "MIT",
+  "neon": {
+    "targets": {
+      "aarch64-apple-darwin": "@cargo-messages/darwin-arm64"
+    }
+  },
+  "devDependencies": {
+    "@neon-rs/cli": "^0.0.152"
+  }
+}

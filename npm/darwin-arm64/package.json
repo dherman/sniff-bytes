@@ -1,0 +1,39 @@
+{
+  "name": "@sniff-bytes/darwin-arm64",
+  "description": "Prebuilt binary package for `sniff-bytes` on `darwin-arm64`.",
+  "version": "0.0.1",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "main": "index.node",
+  "files": [
+    "index.node"
+  ],
+  "author": "David Herman <david.herman@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherman/sniff-bytes.git"
+  },
+  "keywords": [
+    "Rust",
+    "Neon"
+  ],
+  "bugs": {
+    "url": "https://github.com/dherman/sniff-bytes/issues"
+  },
+  "homepage": "https://github.com/dherman/sniff-bytes#readme",
+  "license": "MIT",
+  "neon": {
+    "binary": {
+      "rust": "aarch64-apple-darwin",
+      "node": "darwin-arm64",
+      "platform": "darwin",
+      "arch": "arm64",
+      "abi": null
+    }
+  }
+}
+

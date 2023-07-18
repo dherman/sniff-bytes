@@ -58,5 +58,8 @@
   },
   "devDependencies": {
     "@neon-rs/cli": "^0.0.152"
+  },
+  "dependencies": {
+    "@neon-rs/load": "^0.0.152"
   }
 }

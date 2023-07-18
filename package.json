@@ -53,7 +53,7 @@
   "license": "MIT",
   "neon": {
     "targets": {
-      "aarch64-apple-darwin": "@cargo-messages/darwin-arm64"
+      "aarch64-apple-darwin": "@sniff-bytes/darwin-arm64"
     }
   },
   "devDependencies": {

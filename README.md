@@ -2,7 +2,7 @@
 
 An npm library to sniff the file format of a binary buffer.
 
-```javascript
+```typescript
 import { sniffBytes, FileFormat } from 'sniff-bytes';
 
 const IMAGE: string = `

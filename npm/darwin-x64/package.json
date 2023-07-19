@@ -1,7 +1,7 @@
 {
   "name": "@sniff-bytes/darwin-x64",
   "description": "Prebuilt binary package for `sniff-bytes` on `darwin-x64`.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "os": [
     "darwin"
   ],

@@ -32,7 +32,7 @@
     "cross": "cross build --message-format=json --release | neon dist -v -m /target",
     "pack-build": "neon pack-build -v",
     "prepack": "neon install-builds -v",
-    "version": "neon bump -v --binaries npm",
+    "version": "neon bump -v --binaries npm && git add .",
     "release": "npm version -m 'v%s'"
   },
   "keywords": [

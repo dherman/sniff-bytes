@@ -70,7 +70,7 @@ jobs:
 
   publish:
     name: Publish
-    needs: [macos-builds]
+    needs: [macos-builds, windows-builds, other-builds]
     runs-on: ubuntu-latest
     permissions:
       contents: write

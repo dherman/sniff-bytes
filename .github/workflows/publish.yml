@@ -43,7 +43,6 @@ jobs:
       - name: Build
         uses: neon-actions/build@v0.2
         with:
-          working-directory: ./pkgs/cargo-messages
           target: ${{ matrix.target }}
           node-version: ${{ env.NODE_VERSION }}
           npm-publish: false
@@ -63,7 +62,6 @@ jobs:
       - name: Build
         uses: neon-actions/build@v0.2
         with:
-          working-directory: ./pkgs/cargo-messages
           target: ${{ matrix.target }}
           node-version: ${{ env.NODE_VERSION }}
           use-cross: true

@@ -2,6 +2,26 @@
 
 An npm library to sniff the file format of a binary buffer.
 
+```javascript
+import { sniffBytes, FileFormat } from 'sniff-bytes';
+
+const IMAGE: string = `
+P6
+200 300
+255
+`.trim();
+
+const BYTES: Uint8Array = new Uint8Array(IMAGE.split('').map(c => c.charCodeAt(0)));
+const FORMAT: FileFormat = sniffBytes(BYTES.buffer);
+console.log(FORMAT);
+// {
+//   name: 'Portable PixMap',
+//   shortName: 'PPM',
+//   mediaType: 'image/x-portable-pixmap',
+//   extension: 'ppm'
+// }
+```
+
 # Build
 
 - To build locally, run `npm run debug`.

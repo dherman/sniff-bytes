@@ -14,7 +14,7 @@ jobs:
     name: Builds (macOS)
     strategy:
       matrix:
-        target: [aarch64-apple-darwin]
+        target: [x86_64-apple-darwin, aarch64-apple-darwin]
     runs-on: macos-latest
     permissions:
       contents: write
@@ -26,6 +26,47 @@ jobs:
         with:
           target: ${{ matrix.target }}
           node-version: ${{ env.NODE_VERSION }}
+          npm-publish: false
+          github-release: true
+
+  windows-builds:
+    name: Builds (Windows)
+    strategy:
+      matrix:
+        target: [x86_64-pc-windows-msvc, aarch64-pc-windows-msvc]
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: neon-actions/build@v0.2
+        with:
+          working-directory: ./pkgs/cargo-messages
+          target: ${{ matrix.target }}
+          node-version: ${{ env.NODE_VERSION }}
+          npm-publish: false
+          github-release: true
+
+  other-builds:
+    name: Builds (other platforms)
+    strategy:
+      matrix:
+        target: [x86_64-unknown-linux-gnu, armv7-unknown-linux-gnueabihf, armv7-linux-androideabi]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Build
+        uses: neon-actions/build@v0.2
+        with:
+          working-directory: ./pkgs/cargo-messages
+          target: ${{ matrix.target }}
+          node-version: ${{ env.NODE_VERSION }}
+          use-cross: true
           npm-publish: false
           github-release: true
 

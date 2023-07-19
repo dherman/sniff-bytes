@@ -1,7 +1,7 @@
 {
   "name": "sniff-bytes",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "An npm library to sniff the file format of a binary buffer.",
   "type": "module",
   "exports": {

@@ -33,7 +33,11 @@
     "pack-build": "neon pack-build -v",
     "prepack": "neon install-builds -v",
     "version": "neon bump -v --binaries npm && git add .",
-    "release": "npm version -m 'v%s'"
+    "release": "npm version -m 'v%s'",
+    "postrelease": "git push --follow-tags",
+    "release-patch": "npm run release -- patch",
+    "release-minor": "npm run release -- minor",
+    "release-major": "npm run release -- major"
   },
   "keywords": [
     "Rust",

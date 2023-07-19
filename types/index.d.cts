@@ -1,5 +1,3 @@
-export function hello(): string;
-
 export type FileFormat = {
   name: string,
   shortName: string | null,

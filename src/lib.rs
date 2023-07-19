@@ -29,13 +29,8 @@ fn sniff_bytes(mut cx: FunctionContext) -> JsResult<JsObject> {
     Ok(result)
 }
 
-fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
-    Ok(cx.string("hello, neon"))
-}
-
 #[neon::main]
 fn main(mut cx: ModuleContext) -> NeonResult<()> {
-    cx.export_function("hello", hello)?;
     cx.export_function("sniffBytes", sniff_bytes)?;
     Ok(())
 }

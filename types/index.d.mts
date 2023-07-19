@@ -1,3 +1,3 @@
-import { hello, FileFormat, sniffBytes } from './index.d.cts';
+import { FileFormat, sniffBytes } from './index.d.cts';
 
-export { hello, FileFormat, sniffBytes };
+export { FileFormat, sniffBytes };

@@ -1,0 +1,38 @@
+{
+  "name": "@sniff-bytes/linux-x64-gnu",
+  "description": "Prebuilt binary package for `sniff-bytes` on `linux-x64-gnu`.",
+  "version": "0.0.7",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "index.node",
+  "files": [
+    "index.node"
+  ],
+  "author": "David Herman <david.herman@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherman/sniff-bytes.git"
+  },
+  "keywords": [
+    "Rust",
+    "Neon"
+  ],
+  "bugs": {
+    "url": "https://github.com/dherman/sniff-bytes/issues"
+  },
+  "homepage": "https://github.com/dherman/sniff-bytes#readme",
+  "license": "MIT",
+  "neon": {
+    "binary": {
+      "rust": "x86_64-unknown-linux-gnu",
+      "node": "linux-x64-gnu",
+      "platform": "linux",
+      "arch": "x64",
+      "abi": "gnu"
+    }
+  }
+}

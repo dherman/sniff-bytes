@@ -1,0 +1,38 @@
+{
+  "name": "@sniff-bytes/win32-arm64-msvc",
+  "description": "Prebuilt binary package for `sniff-bytes` on `win32-arm64-msvc`.",
+  "version": "0.0.7",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "main": "index.node",
+  "files": [
+    "index.node"
+  ],
+  "author": "David Herman <david.herman@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherman/sniff-bytes.git"
+  },
+  "keywords": [
+    "Rust",
+    "Neon"
+  ],
+  "bugs": {
+    "url": "https://github.com/dherman/sniff-bytes/issues"
+  },
+  "homepage": "https://github.com/dherman/sniff-bytes#readme",
+  "license": "MIT",
+  "neon": {
+    "binary": {
+      "rust": "aarch64-pc-windows-msvc",
+      "node": "win32-arm64-msvc",
+      "platform": "win32",
+      "arch": "arm64",
+      "abi": "msvc"
+    }
+  }
+}

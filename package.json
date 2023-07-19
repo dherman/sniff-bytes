@@ -58,7 +58,13 @@
   "license": "MIT",
   "neon": {
     "targets": {
-      "aarch64-apple-darwin": "@sniff-bytes/darwin-arm64"
+      "x86_64-pc-windows-msvc": "@sniff-bytes/win32-x64-msvc",
+      "aarch64-pc-windows-msvc": "@sniff-bytes/win32-arm64-msvc",
+      "x86_64-apple-darwin": "@sniff-bytes/darwin-x64",
+      "aarch64-apple-darwin": "@sniff-bytes/darwin-arm64",
+      "x86_64-unknown-linux-gnu": "@sniff-bytes/linux-x64-gnu",
+      "armv7-unknown-linux-gnueabihf": "@sniff-bytes/linux-arm-gnueabihf",
+      "armv7-linux-androideabi": "@sniff-bytes/android-arm-eabi"
     }
   },
   "devDependencies": {

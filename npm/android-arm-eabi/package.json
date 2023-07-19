@@ -1,0 +1,38 @@
+{
+  "name": "@sniff-bytes/android-arm-eabi",
+  "description": "Prebuilt binary package for `sniff-bytes` on `android-arm-eabi`.",
+  "version": "0.0.7",
+  "os": [
+    "android"
+  ],
+  "cpu": [
+    "arm"
+  ],
+  "main": "index.node",
+  "files": [
+    "index.node"
+  ],
+  "author": "David Herman <david.herman@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherman/sniff-bytes.git"
+  },
+  "keywords": [
+    "Rust",
+    "Neon"
+  ],
+  "bugs": {
+    "url": "https://github.com/dherman/sniff-bytes/issues"
+  },
+  "homepage": "https://github.com/dherman/sniff-bytes#readme",
+  "license": "MIT",
+  "neon": {
+    "binary": {
+      "rust": "armv7-linux-androideabi",
+      "node": "android-arm-eabi",
+      "platform": "android",
+      "arch": "arm",
+      "abi": "eabi"
+    }
+  }
+}

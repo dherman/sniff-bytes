@@ -1,7 +1,7 @@
 {
   "name": "@sniff-bytes/android-arm-eabi",
   "description": "Prebuilt binary package for `sniff-bytes` on `android-arm-eabi`.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "os": [
     "android"
   ],

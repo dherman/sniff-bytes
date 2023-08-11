@@ -70,10 +70,10 @@
     }
   },
   "devDependencies": {
-    "@neon-rs/cli": "^0.0.164",
+    "@neon-rs/cli": "^0.0.165",
     "@tsconfig/node16": "^16.1.0"
   },
   "dependencies": {
-    "@neon-rs/load": "^0.0.164"
+    "@neon-rs/load": "^0.0.165"
   }
 }

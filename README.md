@@ -11,7 +11,7 @@ P6
 255
 `.trim();
 
-const BYTES: Uint8Array = new Uint8Array(IMAGE.split('').map(c => c.charCodeAt(0)));
+const BYTES: Uint8Array = new TextEncoder('utf-8').encode(IMAGE);
 const FORMAT: FileFormat = sniffBytes(BYTES.buffer);
 console.log(FORMAT);
 // {
